@@ -1,0 +1,20 @@
+{
+  "name": "RBFCU Account Nickname Enhancer",
+  "short_name": "RBFCU Nick Enhancer",
+  "version": "1.0.0",
+  "manifest_version": 2,
+
+  "description": "Remembers RBFCU account nicknames and inserts them in helpful places.",
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.rbfcu.org/NBO/accountsummary/snapshot.do",
+        "https://www.rbfcu.org/NBO/transfers/loadActiveTransfers.do"
+      ],
+      "js": [ "main.js" ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ]
+}

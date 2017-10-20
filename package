@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Ensure our output directory exists.
+outdir="./pkg/"
+mkdir -p "${outdir}"
+
+# Grab the current version and use it in the packaged file name.
+version="$(jq --raw-output '.version' manifest.json)"
+out="${outdir}/rbfcu-account-nickname-enhancer-${version}.zip"
+
+# Grab all the files we'll need from the manifest.
+files="manifest.json $(jq '.content_scripts[0].js[]' manifest.json | xargs)"
+
+# Package up all the files together into a single archive.
+zip --include ${files} -r -9 "${out}" .
