@@ -1,6 +1,9 @@
 RBFCU Account Nickname Enhancer
 ===============================
 
+*Note*: With the re-design of their website, this extension is no longer
+functional, and has hence been archived for posterity.
+
 An extension that remembers what nicknames your accounts have, then applies them
 in places they don't normally show up for ease of recognition.
 
